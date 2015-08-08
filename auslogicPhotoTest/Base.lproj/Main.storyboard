@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2Y6-5P-N2c">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--PhotoPicker-->
+        <scene sceneID="0lk-sa-tZq">
+            <objects>
+                <viewController id="4cJ-vo-91L" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZhH-Sk-gtC"/>
+                        <viewControllerLayoutGuide type="bottom" id="JNf-Q0-Yyw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9vC-Jt-M7M">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="4GB-dv-e1q">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efo-AS-BcN">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Photo Library" id="TEB-qi-HMM">
+                                        <connections>
+                                            <action selector="showImagePickerForPhotoPicker:" destination="4cJ-vo-91L" id="c1e-oJ-OzT"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="OX1-9C-ENa"/>
+                                    <barButtonItem title="Save To Gallery" id="qmO-VR-RXN">
+                                        <connections>
+                                            <action selector="saveImage:" destination="4cJ-vo-91L" id="RFK-qo-1V7"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="pRB-2R-K6I"/>
+                                    <barButtonItem title="Apply Filter" id="4wu-gw-JG4">
+                                        <connections>
+                                            <action selector="applyFilter:" destination="4cJ-vo-91L" id="1Ai-n9-Tej"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="efo-AS-BcN" firstAttribute="trailing" secondItem="9vC-Jt-M7M" secondAttribute="trailing" id="ES8-X0-8kh"/>
+                            <constraint firstItem="4GB-dv-e1q" firstAttribute="top" secondItem="9vC-Jt-M7M" secondAttribute="top" id="Mo9-Ny-ona"/>
+                            <constraint firstItem="4GB-dv-e1q" firstAttribute="trailing" secondItem="9vC-Jt-M7M" secondAttribute="trailing" id="V4K-jR-a46"/>
+                            <constraint firstItem="efo-AS-BcN" firstAttribute="top" secondItem="4GB-dv-e1q" secondAttribute="bottom" id="Wuz-n1-wdi"/>
+                            <constraint firstItem="efo-AS-BcN" firstAttribute="bottom" secondItem="9vC-Jt-M7M" secondAttribute="bottom" id="hWW-TF-LoV"/>
+                            <constraint firstItem="4GB-dv-e1q" firstAttribute="leading" secondItem="9vC-Jt-M7M" secondAttribute="leading" id="rWw-7x-8Bh"/>
+                            <constraint firstItem="efo-AS-BcN" firstAttribute="leading" secondItem="9vC-Jt-M7M" secondAttribute="leading" id="sYb-J6-eVv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="PhotoPicker" id="A63-Gg-cQ1"/>
+                    <connections>
+                        <outlet property="imageView" destination="4GB-dv-e1q" id="CcZ-ob-lhL"/>
+                        <outlet property="toolBar" destination="efo-AS-BcN" id="f3D-rS-NgV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yca-s7-gQq" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="83" y="62"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cWS-NF-ujB">
+            <objects>
+                <navigationController id="2Y6-5P-N2c" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Py-W9-Cgk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4cJ-vo-91L" kind="relationship" relationship="rootViewController" id="HlH-5e-RuO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fI3-CK-kYH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-683" y="56"/>
+        </scene>
+    </scenes>
+</document>
